@@ -1,0 +1,24 @@
+@defer{
+
+  <div class="flex flex-col md:flex-row sm:flex-col w-full min-w-full  border-b-2 border-r-2 border-slate-900 rounded place-content-between mt-2">
+    <div class="flex flex-col px-2 mx-auto text-wrap">
+      <h3 [class]="titleCSS">{{task.title}}</h3>
+      <hr>
+      <p [class]="descriptionCSS">{{task.description}}</p>
+    </div>
+    <div class="flex align-middle justify-around self-center lg:self-end sm:self-center">
+
+      <button [class]="completedButtonCSS" (click)="toggleCompleted(task.id)"
+      >{{completedButtonText}}</button>
+
+      <button class="bg-white-500 hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded m-2" (click)="edit(task.id)"
+      >Editar</button>
+
+      <button class="bg-white-500 hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded m-2" (click)="delete(task.id)"
+      >Eliminar</button>
+
+    </div>
+
+  </div>
+
+}

@@ -1,0 +1,18 @@
+<form [formGroup]="todoListForm" (ngSubmit)="handleSubmit()" (keydown.enter)="handleSubmit()"
+class="flex flex-col text-center w-96 ">
+  <h1 class="self-start my-4 font-extrabold size-8 w-full">Nueva tarea</h1>
+  <label for="title" class="block self-start mt-2">
+    Título:
+  </label>
+  <input class="block bg-slate-200 p-2 rounded" id="title" type="text" formControlName="title" placeholder="Usar la app de tareas" required/>
+  <label for="description" class="block self-start mt-2">
+    Descripción:
+  </label>
+  <textarea class="block bg-slate-200 min-h-40 rounded p-2" id="description" type="text-area" formControlName="description" placeholder="Comenzar a usar la app de tareas para tener un registro de ellas y controlar mejor mi tiempo..." required>  </textarea>
+
+  <button class="bg-white-500 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4 w-full"
+  type="submit" [disabled]="!todoListForm.valid" >Crear nueva tarea</button>
+
+</form>
+<button class="bg-white-500 hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded mt-4 w-full" (click)="handleBack()"
+>Volver</button>

@@ -1,0 +1,19 @@
+<div class=" items-start w-full">
+  <h1 class=" text-center font-bold m-3 text-4xl text-slate-500">Listado de tareas</h1>
+  <div class="">
+    @if(todoList.length === 0){
+      <div class="my-4">
+        <h2 class="text-center ">
+          ¡Comienza a agregar tus tareas por hacer!
+
+      </h2>
+    </div>
+    }
+    @for (task of todoList; track $index){
+
+      <app-task-card [task]="task"></app-task-card>
+    }
+    <button class="bg-white-500 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4 w-full" (click)="newTaskNavigate()">Agregar nueva tarea</button>
+  </div>
+</div>
+
