@@ -3,11 +3,12 @@ import { Task } from '../../../interfaces/task.interface';
 import { TodoListService } from '../../../services/todo-list.service';
 import { TaskService } from '../../../services/task.service';
 import { Router } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-task-card',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './task-card.component.html',
   styleUrl: './task-card.component.css'
 })
